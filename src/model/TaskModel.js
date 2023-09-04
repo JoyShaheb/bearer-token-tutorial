@@ -22,6 +22,11 @@ const TaskSchema = new mongoose.Schema({
     maxlength: 50,
     default: "",
   },
+  taskOwner: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "User",
+  },
 });
 
 export const TaskModel = mongoose.model("Task", TaskSchema);

@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { UserRoutes } from "./routes/UserRoutes.js";
+import { TaskRoutes } from "./routes/TaskRoutes.js";
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/userAuth", UserRoutes);
+app.use("/api/tasks", TaskRoutes);
 
 app.listen(PORT, () => {
   console.log("Server is running on port 5000");
